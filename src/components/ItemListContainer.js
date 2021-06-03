@@ -1,9 +1,9 @@
 import React from 'react'
 
-function ItemListContainer(props){
-    return(
+function ItemListContainer({greeting}) {
+    return (
         <div>
-            <h2>{props.greeting}</h2>
+            <h2>{greeting}</h2>
         </div>
     )
 }
