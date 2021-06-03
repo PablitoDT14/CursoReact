@@ -6,10 +6,10 @@ import ItemListContainer from './components/ItemListContainer'
 function App() {
   return (
     <div>
-      <NavBar/>
-      <ItemListContainer greeting="Bienvenido al portal de compras"/>
+      <NavBar />
+      <ItemListContainer greeting="Bienvenido al portal de compras" />
     </div>
-      
+
   );
 }
 
