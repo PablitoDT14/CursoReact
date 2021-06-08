@@ -1,0 +1,13 @@
+.botonesContador{
+    margin: 15px 30px 15px 30px;
+    height: 40px;
+    width: 40px;
+    color: white;
+    background-color: grey;
+    font-weight: bold;
+}
+
+.cantidad{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
