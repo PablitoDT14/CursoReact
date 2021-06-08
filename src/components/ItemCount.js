@@ -3,22 +3,20 @@ import React, { useState } from 'react';
 
 
 const ItemCount = ({stock, inicio}) => {
-  let initial = parseInt(inicio)
-  let stockCount = parseInt(stock)
-  const [clicks, setClicks] = useState(initial);
+  const [count, setCount] = useState(inicio);
 
   function aumentarContador() {
-    if (clicks<stockCount) setClicks(clicks + 1);
+    if (count<stock) setCount(count + 1);
   }
 
   function disminuirContador() {
-    if (clicks>initial) setClicks(clicks -1);
+    if (count>inicio) setCount(count -1);
   }
   return (
     <div>
-      <button class="botonesContador" onClick={aumentarContador}>+</button>
-      <label class="cantidad">{clicks}</label>
-      <button class="botonesContador" onClick={disminuirContador}>-</button>
+      <button className="botonesContador" onClick={aumentarContador}>+</button>
+      <label className="cantidad">{count}</label>
+      <button className="botonesContador" onClick={disminuirContador}>-</button>
     </div>
   );
 };
