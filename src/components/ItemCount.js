@@ -13,7 +13,7 @@ const ItemCount = ({stock, inicio}) => {
     if (count>inicio) setCount(count -1);
   }
   return (
-    <div>
+    <div className="oneCount">
       <button className="botonesContador" onClick={aumentarContador}>+</button>
       <label className="cantidad">{count}</label>
       <button className="botonesContador" onClick={disminuirContador}>-</button>

@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "Teclado",
+        "description": "Teclado inalámbrico Genius",
+        "price": 1200,
+        "pictureUrl": "images/teclado.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Mouse",
+        "description": "Mouse inalámbrico HP",
+        "price": 1400,
+        "pictureUrl": "images/mouse.jpg"
+    },
+    {
+        "id": 1,
+        "title": "Teclado",
+        "description": "Teclado inalámbrico Genius",
+        "price": 1200,
+        "pictureUrl": "images/teclado.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Mouse",
+        "description": "Mouse inalámbrico HP",
+        "price": 1400,
+        "pictureUrl": "images/mouse.jpg"
+    }
+ ]

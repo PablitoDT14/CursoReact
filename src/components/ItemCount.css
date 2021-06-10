@@ -1,5 +1,5 @@
 .botonesContador{
-    margin: 15px 30px 15px 30px;
+    margin: 10px;
     height: 40px;
     width: 40px;
     color: white;
@@ -8,6 +8,13 @@
 }
 
 .cantidad{
+    height: 40px;
+    width: 20px;
+    text-align: center;
     font-weight: bold;
     font-size: 1.3rem;
+}
+
+.oneCount{
+    padding-left: 60px;
 }

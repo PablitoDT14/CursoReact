@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <NavBar />
-      <ItemListContainer greeting="Meditación guiada"/>
+      <ItemListContainer greeting="Productos"/>
     </div>
 
   );

@@ -1,0 +1,9 @@
+.oneCard{
+    width: 25%;
+    margin-left: 40px;
+}
+
+.fourCards{
+    display:flex;
+    height: 50%;
+}
