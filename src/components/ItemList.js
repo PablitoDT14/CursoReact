@@ -6,12 +6,11 @@ import ItemCount from './ItemCount'
 
 
 function ItemList(){
-    const productos = Productos;
     return(
         <div className="fourCards">
             {
-            productos.map((producto, index)=>{ return(
-                <div id={index+1} className="oneCard">
+            Productos.map((producto, index)=>{ return(
+                <div key={index} className="oneCard">
                     <Item title={producto.title} 
                     description={producto.description}
                     price={producto.price}
