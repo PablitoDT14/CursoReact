@@ -1,4 +1,3 @@
-//traer de la pokeapi una tarjeta para mostrar el detalle de la lista
 import './ItemListContainer.css'
 import React from 'react'
 import ItemDetail from './ItemDetail'

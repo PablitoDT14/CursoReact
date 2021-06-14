@@ -1,13 +1,10 @@
 .oneCard{
     display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-}
-
-.card{
-    grid-column: 1 / 4;
- 
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 120px;
+    grid-auto-rows: minmax(100px, auto);
+    align-items: center;
+    justify-content: space-between;
 }
 
 .fourCards{

@@ -29,7 +29,7 @@ function Item2() {
                   <Card.Link href="#">Ver Item</Card.Link>
                   <Card.Link href="#">Comprar</Card.Link>
                 </Card.Body>
-                <ItemCount/>
+                <ItemCount stock={20} inicio={1} />
               </Card>
             </div>
             )
