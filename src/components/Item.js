@@ -28,7 +28,7 @@ function Item() {
                   <ListGroupItem>${producto.price}</ListGroupItem>
                 </ListGroup>
                 <Card.Body>
-                  <Link to={`/products/${index}`}>Ver Item</Link>
+                  <Link to={`/products/${producto.id}`}>Ver Item</Link>
                 </Card.Body>
                 <ItemCount stock={20} inicio={1} />
               </Card>

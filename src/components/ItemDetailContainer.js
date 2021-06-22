@@ -5,7 +5,7 @@ import {useParams} from 'react-router-dom'
 
 
 function ItemDetailContainer() {
-    const {id} = useParams()
+    let {id} = useParams()
     return (
         <div>
             <ItemDetail id={id} />
