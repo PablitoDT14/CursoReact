@@ -1,8 +1,9 @@
 import '../styles/ItemList.css'
 import React, { useEffect, useState } from 'react'
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import ItemCount from './ItemCount'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+
 
 
 function Item() {
@@ -33,7 +34,7 @@ function Item() {
                 <ItemCount stock={20} inicio={1} />
               </Card>
             </div>
-            )
+          )
         })) : (console.log('Loading'))}
     </div>
   )

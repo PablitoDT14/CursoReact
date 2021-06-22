@@ -1,7 +1,8 @@
 import '../styles/ItemList.css'
-import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
 import React, { useEffect, useState } from 'react'
+import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
 import {useParams} from 'react-router-dom'
+import ItemCount from './ItemCount'
 
 
 
@@ -35,6 +36,7 @@ function ItemDetail() {
                                 </ListGroup>
                                 <Card.Text>{productos.description}</Card.Text>
                             </Card>
+                            <ItemCount stock={20} inicio={1} />
                         </div>
     )
 }

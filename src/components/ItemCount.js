@@ -2,15 +2,15 @@ import '../styles/ItemCount.css'
 import React, { useState } from 'react';
 
 
-const ItemCount = ({stock, inicio}) => {
+const ItemCount = ({ stock, inicio }) => {
   const [count, setCount] = useState(inicio);
 
   function aumentarContador() {
-    if (count<stock) setCount(count + 1);
+    if (count < stock) setCount(count + 1);
   }
 
   function disminuirContador() {
-    if (count>inicio) setCount(count -1);
+    if (count > inicio) setCount(count - 1);
   }
   return (
     <div className="oneCount">
