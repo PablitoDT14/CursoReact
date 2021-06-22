@@ -1,26 +1,18 @@
 import React from 'react'
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
-import CartWidget from './CartWidget'
+import {Link} from 'react-router-dom'
+import CartWidget from '../assets/carrito.png'
+import '../styles/navbar.css'
 
 function NavBar() {
   return (
-    <div>
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">Sanación Integral</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Acerca de mi</Nav.Link>
-            <NavDropdown title="Compras" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Cursos</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Meditaciones</NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-          <CartWidget />
-        </Navbar.Collapse>
-      </Navbar>
-    </div>
+    <nav className='navigation'>
+      <ul>
+        <li>
+          <Link to="/">Pablo Aguirre IT</Link>
+        </li>
+      </ul>
+      <img src={CartWidget} className='carrito'/>
+    </nav>
   )
 }
 

@@ -1,13 +1,14 @@
-import './ItemListContainer.css'
+import '../styles/ItemListContainer.css'
 import React from 'react'
 import ItemDetail from './ItemDetail'
+import {useParams} from 'react-router-dom'
 
 
-function ItemDetailContainer({greeting}) {
+function ItemDetailContainer() {
+    const {id} = useParams()
     return (
         <div>
-            <h2>{greeting}</h2>
-            <ItemDetail />
+            <ItemDetail id={id} />
         </div>
     )
 }

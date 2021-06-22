@@ -1,12 +1,12 @@
-import './ItemListContainer.css'
+import '../styles/ItemListContainer.css'
 import React from 'react'
-import ItemList from './ItemList'
+import ItemList from '../components/ItemList'
 
 
-function ItemListContainer({greeting}) {
+function ItemListContainer() {
     return (
         <div>
-            <h2>{greeting}</h2>
+            <h2>PRODUCTOS</h2>
             <ItemList />
         </div>
     )

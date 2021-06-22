@@ -1,19 +1,18 @@
 import React from 'react'
-import Home from '../pages/Home'
-import About from '../pages/About'
-import Products from '../pages/Products'
+import ItemListContainer from '../components/ItemListContainer'
 import NavBar from '../components/NavBar'
-import { BrowserRouter as Router , Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import ItemDetailContainer from '../components/ItemDetailContainer'
 
 
 function AppRouter() {
     return (
         <Router>
-            <NavBar/>
+            <NavBar />
             <Switch>
-                <Route exact path="/" component={Home}/>
-                <Route path="/about" component={About}/>
-                <Route path="/products" component={Products}/>
+                <Route exact path="/" component={ItemListContainer} />
+                <Route path="/products/:id" component={ItemDetailContainer} />
+                {/*<Route path="*" component={NotFound}/>*/}
             </Switch>
         </Router>
     )
