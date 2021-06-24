@@ -2,6 +2,23 @@
     display: grid;
     grid-gap: 5rem;
     grid-auto-flow: dense;
-    grid-auto-rows: 50rem;
+    grid-auto-rows: 35rem;
     grid-template-columns: repeat(auto-fill,minmax(15rem, 1fr));
+}
+
+.precio{
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+    color: green;
+}
+
+.details{
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.fourCards{
+    margin-left: 20px;
 }
