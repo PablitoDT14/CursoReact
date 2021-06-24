@@ -1,13 +1,7 @@
-.oneCard{
+ .oneCard{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 100px;
-    grid-auto-rows: minmax(100px, auto);
-    align-items: center;
-    justify-content: space-between;
-}
-
-.fourCards{
-    display:flex;
-    height: 50%;
+    grid-gap: 5rem;
+    grid-auto-flow: dense;
+    grid-auto-rows: 50rem;
+    grid-template-columns: repeat(auto-fill,minmax(15rem, 1fr));
 }

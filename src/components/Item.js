@@ -2,14 +2,13 @@ import '../styles/ItemList.css'
 import React, { useEffect, useState } from 'react'
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import ItemCount from './ItemCount'
 
 
 
 function Item() {
   const [productos, setProductos] = useState(null);
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products?limit=6')
+    fetch('https://fakestoreapi.com/products?limit=10')
       .then((res) => res.json())
       .then((res) => setProductos(res))
   }, []);
@@ -18,7 +17,7 @@ function Item() {
       {productos !== null ? (
         productos.map((producto, index) => {
           return (
-            <div key={producto.id} className="card">
+            <div key={producto.id}>
               <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={producto.image} />
                 <Card.Body>
