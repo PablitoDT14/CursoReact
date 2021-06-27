@@ -35,7 +35,7 @@ function ItemDetail() {
                     <ListGroupItem>${productos.price}</ListGroupItem>
                 </ListGroup>
                 <Card.Text>{productos.description}</Card.Text>
-                <ItemCount stock={20} inicio={0} />
+                <ItemCount stock={20} inicio={0} productObj={productos}/>
             </Card>
 
         </div>

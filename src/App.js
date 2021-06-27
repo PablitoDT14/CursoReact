@@ -1,16 +1,16 @@
 import './App.css';
-import React, {createContext} from 'react'
+import React from 'react'
 import AppRouter from './routers/AppRouter'
-export const DataContext = createContext();
+import { CartProvider } from './components/CartContext';
 
 
 function App() {
   return (
     <div>
-      <DataContext.Provider value='Datos por context'>
+      <CartProvider>
         <AppRouter />
-      </DataContext.Provider>
-      
+      </CartProvider>
+
     </div>
   );
 }
