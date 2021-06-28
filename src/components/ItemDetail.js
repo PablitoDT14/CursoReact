@@ -1,14 +1,12 @@
 import '../styles/ItemList.css'
 import React, { useEffect, useState } from 'react'
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
-import { useParams } from 'react-router-dom'
 import ItemCount from './ItemCount'
 
 
 
-function ItemDetail() {
+function ItemDetail({id}) {
     const [productos, setProductos] = useState({});
-    let { id } = useParams()
 
     useEffect(() => {
         const getProduct = async () => {

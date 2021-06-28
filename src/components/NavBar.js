@@ -12,7 +12,7 @@ function NavBar() {
           <Link to="/">Pablo Aguirre IT</Link>
         </li>
       </ul>
-      <img src={CartWidget} className='carrito' />
+      <Link to="/carrito"><img src={CartWidget} className='carrito' alt='carrito de compras'/></Link>
     </nav>
   )
 }

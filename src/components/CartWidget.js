@@ -3,7 +3,7 @@ import Carrito from "../assets/carrito.png"
 
 function CartWidget() {
     return (
-        <img src={Carrito} alt="carro"></img>
+        <img src={Carrito}  alt="carro"></img>
     )
 
 }

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import ItemListContainer from '../components/ItemListContainer'
 import NavBar from '../components/NavBar'
 import ItemDetailContainer from '../components/ItemDetailContainer'
+import CartContent from '../components/CartContent'
 
 
 function AppRouter() {
@@ -12,6 +13,7 @@ function AppRouter() {
             <Switch>
                 <Route exact path="/" component={ItemListContainer} />
                 <Route path="/products/:id" component={ItemDetailContainer} />
+                <Route path="/carrito" component={CartContent} />
                 {/*<Route path="*" component={NotFound}/>*/}
             </Switch>
         </Router>

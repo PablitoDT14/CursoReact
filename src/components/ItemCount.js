@@ -1,13 +1,19 @@
 import '../styles/ItemCount.css'
 import React, { useState } from 'react';
 import {  Button } from 'react-bootstrap'
-import { UseCart } from './CartContext';
+import { UseCart } from '../provider/CartContext';
 
 
-const ItemCount = ({ stock, inicio, product }) => {
+const ItemCount = ({ stock, inicio, productObj }) => {
   const [count, setCount] = useState(inicio);
   const {AddToCart} = UseCart()
-  let productObj = product;
+
+  let cartProds = {
+    id:productObj.id,
+    product: productObj.title,
+    precio:productObj.price,
+    cantidad: count
+  }
 
   function aumentarContador() {
    
@@ -26,7 +32,7 @@ const ItemCount = ({ stock, inicio, product }) => {
       <button className="botonesContador" onClick={aumentarContador}>+</button>
       <label className="cantidad">{count}</label>
       <button className="botonesContador" onClick={disminuirContador}>-</button>
-      {(count>0) ? <Button className="boton" onClick={()=>{AddToCart(productObj)}}>Comprar</Button> : console.log('no hay boton') }
+      {(count>0) ? <Button className="boton" onClick={()=>{AddToCart(cartProds)}}>Comprar</Button> : console.log('0 seleccionados') }
     </div>
   );
 };
