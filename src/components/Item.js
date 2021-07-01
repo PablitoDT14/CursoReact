@@ -19,7 +19,7 @@ function Item() {
           return (
             <div key={producto.id}>
               <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" style={{'width':'300px', 'height':'300px', 'object-fit':'scale-down'}} src={producto.image} />
+                <Card.Img variant="top" style={{'width':'300px', 'height':'300px', 'objectFit':'scale-down'}} src={producto.image} />
                 <Card.Body>
                   <Card.Title>{producto.title}</Card.Title>
                 </Card.Body>

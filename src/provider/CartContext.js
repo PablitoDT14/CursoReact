@@ -7,16 +7,28 @@ export function UseCart() {
 
     export function CartProvider({children}){
         const [cart, setCart] = useState([])
-        function AddToCart(obj){
-            for (const objs of cart) {
-                if(objs.id===obj.id){
-                    console.log('el objeto ya existe ')
-                }
-                else{
-                    console.log('el objeto aun no existe')
-                }
+
+        function IsInCart(obj) {
+            let isInCart = false;
+            for (let i = cart.length - 1; i >= 0; i--) {
+                isInCart = cart[i].id === obj.id;
+                if (isInCart) { break;}
             }
-            setCart([...cart,obj])
+            return isInCart;
+        }
+
+        function AddToCart(obj){
+            if (!IsInCart(obj)){
+                setCart([...cart,obj])
+            }
+            else {
+                for (var i = cart.length - 1; i >= 0; i--) {
+                  if (cart[i].id === obj.id) {
+                    cart[i].cantidad = cart[i].cantidad + obj.cantidad;
+                    setCart([...cart]);
+                  }
+                }
+              }
         }
 
         console.log(cart)
@@ -27,4 +39,3 @@ export function UseCart() {
             </CartContext.Provider>
         )
     }
-
