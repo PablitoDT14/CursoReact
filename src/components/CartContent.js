@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { UseCart } from '../provider/CartContext'
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
 
 function CartContent() {
     const {cart} = UseCart()
+    let total = 0
     if(cart.length>0){
         const carro= cart.map((item, index)=>{
+        total = total+item.total
         return(
         <Card style={{ width: '18rem' }}>
                        <Card.Img variant="top" style={{'width':'100px', 'height':'100px', 'objectFit':'scale-down'}} src={item.image} alt='   Imagen no disponible' />
@@ -22,6 +24,7 @@ function CartContent() {
     return(
       <div>
         {carro}
+        <ListGroupItem className="precio">Total del carrito {total}</ListGroupItem>
       </div>
     )
     }
