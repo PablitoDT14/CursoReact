@@ -25,6 +25,7 @@ export function UseCart() {
                 for (var i = cart.length - 1; i >= 0; i--) {
                   if (cart[i].id === obj.id) {
                     cart[i].cantidad = cart[i].cantidad + obj.cantidad;
+                    cart[i].total= cart[i].precio * cart[i].cantidad;
                     setCart([...cart]);
                   }
                 }
