@@ -1,4 +1,3 @@
-import React, {useState} from 'react'
 import { UseCart } from '../provider/CartContext'
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
 
