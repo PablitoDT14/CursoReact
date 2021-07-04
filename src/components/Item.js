@@ -17,17 +17,16 @@ function Item() {
   useEffect(()=>{
     const db = getFireStore()
     const itemCollection = db.collection("items")
-    itemCollection.get().then((querySnapshot) => {
+    const category = itemCollection.where('category', '==', "Dispositivos de entrada")
+    category.get().then((querySnapshot) => {
         if (querySnapshot.size ===0){
             console.log('No results')
         }
         setProductos(querySnapshot.docs.map(doc => doc.data()))
-        console.log(productos)
     }).catch((error)=>{
         console.log('Error searching items', error)
     })
 }, [])
-
 
   return (
     <div className="oneCard">
