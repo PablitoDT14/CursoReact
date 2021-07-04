@@ -2,16 +2,33 @@ import '../styles/ItemList.css'
 import React, { useEffect, useState } from 'react'
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import {getFireStore} from '../DB/dbConection'
 
 
 
 function Item() {
   const [productos, setProductos] = useState(null);
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products?limit=10')
-      .then((res) => res.json())
-      .then((res) => setProductos(res))
-  }, []);
+  // useEffect(() => {
+  //   fetch('https://fakestoreapi.com/products?limit=10')
+  //     .then((res) => res.json())
+  //     .then((res) => setProductos(res))
+  // }, []);
+
+  useEffect(()=>{
+    const db = getFireStore()
+    const itemCollection = db.collection("items")
+    itemCollection.get().then((querySnapshot) => {
+        if (querySnapshot.size ===0){
+            console.log('No results')
+        }
+        setProductos(querySnapshot.docs.map(doc => doc.data()))
+        console.log(productos)
+    }).catch((error)=>{
+        console.log('Error searching items', error)
+    })
+}, [])
+
+
   return (
     <div className="oneCard">
       {productos !== null ? (
@@ -19,9 +36,10 @@ function Item() {
           return (
             <div key={producto.id}>
               <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" style={{'width':'300px', 'height':'300px', 'objectFit':'scale-down'}} src={producto.image} />
+                <Card.Img variant="top" style={{'width':'250px', 'height':'250px', 'objectFit':'scale-down'}} src={producto.image} />
                 <Card.Body>
-                  <Card.Title>{producto.title}</Card.Title>
+                  <Card.Title>{producto.name}</Card.Title>
+                  <Card.Subtitle>{producto.description}</Card.Subtitle>
                 </Card.Body>
                 <ListGroup className="list-group-flush">
                   <ListGroupItem className="precio">${producto.price}</ListGroupItem>
