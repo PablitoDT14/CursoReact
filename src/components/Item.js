@@ -18,7 +18,7 @@ function Item() {
     const db = getFireStore()
     const itemCollection = db.collection("items")
     const category = itemCollection.where('category', '==', "Dispositivos de entrada")
-    category.get().then((querySnapshot) => {
+    itemCollection.get().then((querySnapshot) => {
         if (querySnapshot.size ===0){
             console.log('No results')
         }
