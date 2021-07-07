@@ -12,7 +12,7 @@ function ItemDetail({id}) {
         const db = getFireStore()
         const itemCollection = db.collection("items")
         console.log(id)
-        const item = itemCollection.where('id', '==', id)
+        const item = itemCollection.where('id', '==', parseInt(id))
         item.get().then((querySnapshot) => {
             if (querySnapshot.size ===0){
                 console.log('No results')
@@ -25,6 +25,10 @@ function ItemDetail({id}) {
     }, [])
     
     return (
+        <div className="oneCard">
+      {producto !== null ? (
+        producto.map((producto, index) => {
+          return (
         <div key={producto.id} className="card">
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={producto.image} />
@@ -39,6 +43,9 @@ function ItemDetail({id}) {
             </Card>
 
         </div>
+         )
+        })) : (console.log('Loading'))}
+    </div>
     )
 }
 export default ItemDetail
