@@ -8,12 +8,6 @@ import {getFireStore} from '../DB/dbConection'
 
 function Item() {
   const [productos, setProductos] = useState(null);
-  // useEffect(() => {
-  //   fetch('https://fakestoreapi.com/products?limit=10')
-  //     .then((res) => res.json())
-  //     .then((res) => setProductos(res))
-  // }, []);
-
   useEffect(()=>{
     const db = getFireStore()
     const itemCollection = db.collection("items")

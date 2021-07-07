@@ -2,38 +2,40 @@ import '../styles/ItemList.css'
 import React, { useEffect, useState } from 'react'
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
 import ItemCount from './ItemCount'
+import {getFireStore} from '../DB/dbConection'
 
 
 
 function ItemDetail({id}) {
-    const [productos, setProductos] = useState({});
-
-    useEffect(() => {
-        const getProduct = async () => {
-            try {
-                const product = await fetch(`https://fakestoreapi.com/products/${id}`)
-                const res = await product.json()
-                setProductos(res)
+    const [producto, setProducto] = useState([]);
+    useEffect(()=>{
+        const db = getFireStore()
+        const itemCollection = db.collection("items")
+        console.log(id)
+        const item = itemCollection.where('id', '==', id)
+        item.get().then((querySnapshot) => {
+            if (querySnapshot.size ===0){
+                console.log('No results')
             }
-            catch (error) {
-                console.log('console.error();')
-            }
-        }
-        getProduct()
+            setProducto(querySnapshot.docs.map(doc => doc.data()))
+            
+        }).catch((error)=>{
+            console.log('Error searching items', error)
+        })
     }, [])
-
+    
     return (
-        <div key={productos.id} className="card">
+        <div key={producto.id} className="card">
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={productos.image} />
+                <Card.Img variant="top" src={producto.image} />
                 <Card.Body>
-                    <Card.Title>{productos.title}</Card.Title>
+                    <Card.Title>{producto.name}</Card.Title>
                 </Card.Body>
                 <ListGroup className="list-group-flush">
-                    <ListGroupItem>${productos.price}</ListGroupItem>
+                    <ListGroupItem>${producto.price}</ListGroupItem>
                 </ListGroup>
-                <Card.Text>{productos.description}</Card.Text>
-                <ItemCount stock={20} inicio={0} productObj={productos}/>
+                <Card.Text>{producto.description}</Card.Text>
+                <ItemCount stock={20} inicio={0} productObj={producto}/>
             </Card>
 
         </div>
