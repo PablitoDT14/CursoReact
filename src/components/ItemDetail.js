@@ -1,51 +1,52 @@
-import '../styles/ItemList.css'
+import '../styles/ItemDetail.css'
 import React, { useEffect, useState } from 'react'
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
 import ItemCount from './ItemCount'
-import {getFireStore} from '../DB/dbConection'
+import { getFireStore } from '../DB/dbConection'
 
 
 
-function ItemDetail({id}) {
+function ItemDetail({ id }) {
     const [producto, setProducto] = useState([]);
-    useEffect(()=>{
+    useEffect(() => {
         const db = getFireStore()
         const itemCollection = db.collection("items")
         console.log(id)
         const item = itemCollection.where('id', '==', parseInt(id))
         item.get().then((querySnapshot) => {
-            if (querySnapshot.size ===0){
+            if (querySnapshot.size === 0) {
                 console.log('No results')
             }
             setProducto(querySnapshot.docs.map(doc => doc.data()))
-            
-        }).catch((error)=>{
+
+        }).catch((error) => {
             console.log('Error searching items', error)
         })
     }, [])
-    
-    return (
-        <div className="oneCard">
-      {producto !== null ? (
-        producto.map((producto, index) => {
-          return (
-        <div key={producto.id} className="card">
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={producto.image} />
-                <Card.Body>
-                    <Card.Title>{producto.name}</Card.Title>
-                </Card.Body>
-                <ListGroup className="list-group-flush">
-                    <ListGroupItem>${producto.price}</ListGroupItem>
-                </ListGroup>
-                <Card.Text>{producto.description}</Card.Text>
-                <ItemCount stock={20} inicio={0} productObj={producto}/>
-            </Card>
 
+    return (
+        <div>
+            {producto !== null ? (
+                producto.map((producto, index) => {
+                    return (
+                        <div key={producto.id} className="cardDet">
+                            <Card style={{ width: '20rem' }}>
+                                <Card.Body>
+                                    <Card.Title>{producto.name}</Card.Title>
+                                </Card.Body>
+                                <Card.Img variant="top" src={producto.image} />
+
+                                <ListGroup className="list-group-flush">
+                                    <ListGroupItem className="precio">${producto.price}</ListGroupItem>
+                                </ListGroup>
+                                <Card.Text className="details">{producto.description}</Card.Text>
+                                <ItemCount stock={20} inicio={0} productObj={producto} />
+                            </Card>
+
+                        </div>
+                    )
+                })) : (console.log('Loading'))}
         </div>
-         )
-        })) : (console.log('Loading'))}
-    </div>
     )
 }
 export default ItemDetail

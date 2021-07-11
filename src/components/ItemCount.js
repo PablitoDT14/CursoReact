@@ -2,6 +2,7 @@ import '../styles/ItemCount.css'
 import React, { useState } from 'react';
 import {  Button } from 'react-bootstrap'
 import { UseCart } from '../provider/CartContext';
+import { Link } from 'react-router-dom'
 
 
 const ItemCount = ({ stock, inicio, productObj }) => {
@@ -34,7 +35,7 @@ const ItemCount = ({ stock, inicio, productObj }) => {
       <button className="botonesContador" onClick={aumentarContador}>+</button>
       <label className="cantidad">{count}</label>
       <button className="botonesContador" onClick={disminuirContador}>-</button>
-      {(count>0) ? <Button className="boton" onClick={()=>{AddToCart(cartProds)}}>Comprar</Button> : console.log('0 seleccionados') }
+      {(count>0) ? <Link to='/'><Button className="boton" onClick={()=>{AddToCart(cartProds)}}>Comprar</Button></Link> : console.log('0 seleccionados') }
     </div>
   );
 };

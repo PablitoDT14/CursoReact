@@ -4,6 +4,8 @@ import ItemListContainer from '../components/ItemListContainer'
 import NavBar from '../components/NavBar'
 import ItemDetailContainer from '../components/ItemDetailContainer'
 import CartContent from '../components/CartContent'
+import CompraExistosa from '../pages/CompraExitosa'
+import NotFound from '../pages/NotFound'
 
 
 function AppRouter() {
@@ -14,7 +16,8 @@ function AppRouter() {
                 <Route exact path="/" component={ItemListContainer} />
                 <Route path="/products/:id" component={ItemDetailContainer} />
                 <Route path="/carrito" component={CartContent} />
-                {/*<Route path="*" component={NotFound}/>*/}
+                <Route path="/exito" component={CompraExistosa} />
+                <Route path="*" component={NotFound}/>
             </Switch>
         </Router>
     )
