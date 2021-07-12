@@ -26,7 +26,7 @@ function CartContent() {
     const carro = cart.map((item, index) => {
       total = total + item.total
       return (
-        <Card style={{ width: '12rem' }}>
+        <Card key={item.id} style={{ width: '12rem' }}>
           <Card.Img variant="top" style={{ 'width': '180px', 'height': '100px', 'objectFit': 'scale-down' }} className="imagen" src={item.image} alt='   Imagen no disponible' />
           <div className="division">
             <ListGroupItem className="precio">{item.cantidad} x ${item.precio} = ${item.total}</ListGroupItem>

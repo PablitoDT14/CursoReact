@@ -25,7 +25,7 @@ function Categories() {
                 {categorias !== null ? (
                     categorias.map((categoria, index) => {
                         return (
-                            <option value={categoria.category}>{categoria.category}</option>
+                            <option key={categoria.id} value={categoria.category}>{categoria.category}</option>
                         )
                     })) : (console.log('Loading'))}
             </select>
