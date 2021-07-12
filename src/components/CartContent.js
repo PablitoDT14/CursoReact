@@ -1,7 +1,7 @@
 import { UseCart } from '../provider/CartContext'
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
+import { Card, ListGroupItem } from 'react-bootstrap'
 import { getFireStore } from '../DB/dbConection'
 import '../styles/CartContent.css'
 

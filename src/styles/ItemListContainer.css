@@ -1,5 +1,18 @@
-h2{
+.sections{
+  display: flex;
+  justify-content: space-between;
+}
+
+.titulo{
   color: green;  
   margin: 10px 0 35px 25px;
-  
+  width: 50%;
+  float: left;
+}
+
+.seleccion{
+  color:grey;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: serif;
 }
