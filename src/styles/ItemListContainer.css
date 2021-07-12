@@ -11,8 +11,10 @@
 }
 
 .seleccion{
-  color:grey;
+  margin: 20px 70px 0 0;
+  color:blue;
   font-size: 1.2rem;
   font-weight: bold;
   font-family: serif;
+  
 }

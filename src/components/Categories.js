@@ -21,10 +21,11 @@ function Categories() {
     return (
         <div>
             <select className="seleccion">
+            <option value="">Seleccioná una opción...</option>
                 {categorias !== null ? (
                     categorias.map((categoria, index) => {
                         return (
-                            <option>{categoria.category}</option>
+                            <option value={categoria.category}>{categoria.category}</option>
                         )
                     })) : (console.log('Loading'))}
             </select>
