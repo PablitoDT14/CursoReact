@@ -1,0 +1,9 @@
+.not_found{
+    display: flex;
+    justify-content: center;
+    color: rgb(74, 109, 74);
+}
+
+.linkeado{
+    color: rgb(74, 109, 74);
+}

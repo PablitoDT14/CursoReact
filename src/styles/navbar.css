@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 5px;
 }
 
 .navigation ul {
@@ -10,7 +11,7 @@
   margin: 0;
   padding: 0;
   margin-left: 20px;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .carrito{
