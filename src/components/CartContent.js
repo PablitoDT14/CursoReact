@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { Card, ListGroupItem } from 'react-bootstrap'
 import { getFireStore } from '../DB/dbConection'
 import '../styles/CartContent.css'
+import EmptyCart from '../assets/empty-cart.gif'
 
 
 function CartContent() {
@@ -45,11 +46,11 @@ function CartContent() {
   }
   else {
     return (
-      <div>
-
-        <p>Carrito vacio - Diseñar Página</p>
-
-      </div>
+      <section>
+            <div className="not_found"><img src={EmptyCart} alt='carrito de compras' /></div>
+            <div className="not_found"><h1>Haz feliz al carrito 💸</h1></div>
+            <div className="not_found"><h2>Accedé al <Link className="linkeado" to="/">Home</Link> y aprovechá las ofertas</h2></div>
+        </section>
     )
   }
 
