@@ -4,6 +4,7 @@ import '../styles/ItemListContainer.css'
 
 function Categories() {
     const [categorias, setCategorias] = useState(null);
+
     useEffect(() => {
         const db = getFireStore()
         const itemCollection = db.collection("items")
@@ -11,7 +12,13 @@ function Categories() {
             if (querySnapshot.size === 0) {
                 console.log('No results')
             }
-            setCategorias(querySnapshot.docs.map(doc => doc.data()))
+            let cat = []
+            const base = querySnapshot.docs.map(doc => doc.data());
+            for (const it of base) {
+                cat.push(it.category)
+            }
+            let conjuntoUnico = Array.from(new Set(cat));
+            setCategorias(conjuntoUnico)
         }).catch((error) => {
             console.log('Error searching items', error)
         })
@@ -20,12 +27,12 @@ function Categories() {
 
     return (
         <div>
-            <select className="seleccion">
-            <option value="">Seleccioná una opción...</option>
+            <select className="seleccion" id="seleccion" name="seleccion">
+                <option value="0">Seleccioná una opción...</option>
                 {categorias !== null ? (
                     categorias.map((categoria, index) => {
                         return (
-                            <option key={categoria.id} value={categoria.category}>{categoria.category}</option>
+                            <option key={categoria.index} value={categoria}>{categoria}</option>
                         )
                     })) : (console.log('Loading'))}
             </select>
