@@ -28,7 +28,7 @@ function Categories() {
     return (
         <div>
             <select className="seleccion" id="seleccion" name="seleccion">
-                <option value="0">Seleccioná una opción...</option>
+                <option value="0">Todos los productos</option>
                 {categorias !== null ? (
                     categorias.map((categoria, index) => {
                         return (

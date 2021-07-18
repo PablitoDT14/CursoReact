@@ -11,7 +11,6 @@ function ItemDetail({ id }) {
     useEffect(() => {
         const db = getFireStore()
         const itemCollection = db.collection("items")
-        console.log(id)
         const item = itemCollection.where('id', '==', parseInt(id))
         item.get().then((querySnapshot) => {
             if (querySnapshot.size === 0) {

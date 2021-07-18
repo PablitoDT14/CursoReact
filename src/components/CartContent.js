@@ -20,8 +20,7 @@ function CartContent() {
         cantidadItems: cart.length,
         totalCarro: total
       }
-      console.log(carrito)
-      orderCollection.add(carrito).catch(e => { console.log(e) }).finally(console.log('THE END'))
+      orderCollection.add(carrito).catch(e => { console.log(e) })
     }
 
     const carro = cart.map((item, index) => {
@@ -47,10 +46,10 @@ function CartContent() {
   else {
     return (
       <section>
-            <div className="not_found"><img src={EmptyCart} alt='carrito de compras' /></div>
-            <div className="not_found"><h1>Haz feliz al carrito 💸</h1></div>
-            <div className="not_found"><h2>Accedé al <Link className="linkeado" to="/">Home</Link> y aprovechá las ofertas</h2></div>
-        </section>
+        <div className="not_found"><img src={EmptyCart} alt='carrito de compras' /></div>
+        <div className="not_found"><h1>Haz feliz al carrito 💸</h1></div>
+        <div className="not_found"><h2>Accedé al <Link className="linkeado" to="/">Home</Link> y aprovechá las ofertas</h2></div>
+      </section>
     )
   }
 

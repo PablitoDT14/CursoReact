@@ -8,11 +8,11 @@ import { getFireStore } from '../DB/dbConection'
 
 function Item() {
   const [productos, setProductos] = useState(null);
+
   useEffect(() => {
     const db = getFireStore()
     const itemCollection = db.collection("items")
-    let combo = document.getElementById("seleccion");
-    let selected = combo.options[combo.selectedIndex].value;
+
     // const category = itemCollection.where('category', '==', "Dispositivos de entrada")
     itemCollection.get().then((querySnapshot) => {
       if (querySnapshot.size === 0) {
@@ -29,9 +29,9 @@ function Item() {
       {productos !== null ? (
         productos.map((producto, index) => {
           return (
-            <div key={producto.id}>
+            <div key={index}>
               <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" style={{ 'margin-left': '1rem', 'width': '250px', 'height': '250px', 'objectFit': 'scale-down' }} src={producto.image} />
+                <Card.Img variant="top" style={{ 'marginLeft': '1rem', 'width': '250px', 'height': '250px', 'objectFit': 'scale-down' }} src={producto.image} />
                 <Card.Body>
                   <Card.Title>{producto.name}</Card.Title>
                   <Card.Subtitle>{producto.description}</Card.Subtitle>
